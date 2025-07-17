@@ -1,0 +1,79 @@
+{
+    "metadata": {
+        "input_documents": [
+            "sample_pdf/sample_pdf_3.pdf"
+        ],
+        "persona": "AI Researcher focusing on Deep Learning and Graph Neural Networks",
+        "job_to_be_done": "Extract and summarize key architectures, challenges, and applications of Graph Neural Networks",
+        "processing_timestamp": "Thu Jul 17 21:56:48 2025"
+    },
+    "extracted_sections": [
+        {
+            "document": "sample_pdf_3.pdf",
+            "page_number": 2,
+            "section_title": "2.2. Switch Transformer",
+            "importance_rank": 1,
+            "similarity_score": 0.3545
+        },
+        {
+            "document": "sample_pdf_3.pdf",
+            "page_number": 5,
+            "section_title": "7. References",
+            "importance_rank": 2,
+            "similarity_score": 0.327
+        },
+        {
+            "document": "sample_pdf_3.pdf",
+            "page_number": 1,
+            "section_title": "SpeechMoE: Scaling to Large Acoustic Models with Dynamic Routing",
+            "importance_rank": 3,
+            "similarity_score": 0.3023
+        },
+        {
+            "document": "sample_pdf_3.pdf",
+            "page_number": 3,
+            "section_title": "4. Experimental Setup",
+            "importance_rank": 4,
+            "similarity_score": 0.2411
+        },
+        {
+            "document": "sample_pdf_3.pdf",
+            "page_number": 4,
+            "section_title": "5. Experimental Results",
+            "importance_rank": 5,
+            "similarity_score": 0.182
+        }
+    ],
+    "sub_section_analysis": [
+        {
+            "document": "sample_pdf_3.pdf",
+            "page_number": 2,
+            "section_title": "2.2. Switch Transformer",
+            "refined_text": "(\ud835\udc4e)\n(\ud835\udc4f)\n(\ud835\udc50)\nImage\n\ud835\udc38!\n\"#!\n\ud835\udc38$\n\"#!\n\ud835\udc38%\n\"#!\n\u2026\n\u2026\n0.8\n0\n0.5\n\u2026\n\ud835\udc38!\n\"\n\ud835\udc38$\n\"\n\ud835\udc38%\n\"\n\u2026\n0\n1.2\n0\nOutput\nEmbedding\nnetwork\n\ud835\udc54!\"#\n\ud835\udc54!\n\ud835\udc52\n\u2026\nSpeech features\nnon-expert layer\n\ud835\udc38#\n!\"#\n\ud835\udc38$\n!\"#\n\ud835\udc38%\n!\"#\n\u2026\n0.7\n0\n0.2\n\ud835\udc5f!\"#\nnon-expert layer\n\ud835\udc38#\n!\n\ud835\udc38$\n!\n\ud835\udc38%\n!\n\u2026\n0.1\n0.8\n0.1\n\ud835\udc5f!\n\u2026\nOutput\nEmbedding\nnetwork\n\ud835\udc52\n\ud835\udc5c!\"#\n\ud835\udc5c!\"$\n\u2026\nTokens\nnon-expert layer\n\ud835\udc38#\n!\"#\n\ud835\udc38$\n!\"#\n\ud835\udc38%\n!\"#\n\u2026\n0.7\n0\n0.2\n\ud835\udc5f!\"#\nnon-expert layer\n\ud835\udc38#\n!\n\ud835\udc38$\n!\n\ud835\udc38%\n!\n\u2026\n0.1\n0.8\n0.1\n\ud835\udc5f!\n\u2026\nOutput\n\ud835\udc5c!\"#\n\ud835\udc5c!\"$\nFigure 1: (a), (b) and (c) represent the architecture of DeepMoE, Switch Transformer and Spe"
+        },
+        {
+            "document": "sample_pdf_3.pdf",
+            "page_number": 5,
+            "section_title": "7. References",
+            "refined_text": "7. References\n[1] G. E. Dahl, D. Yu, L. Deng, and A. Acero, \u201cContext-dependent\npre-trained deep neural networks for large-vocabulary speech\nrecognition,\u201d in IEEE Transactions on audio, speech, and lan-\nguage processing, vol. 20.\nIEEE, 2012, p. 30\u201342.\n[2] D. Yu and J. Li, \u201cRecent progresses in deep learning based acous-\ntic models,\u201d in IEEE/CAA Journal of Automatica Sinica, vol. 4.\nIEEE, 2017, p. 396\u2013409.\n[3] T. N. Sainath, A.-r. Mohamed, B. Kingsbury, and B. Ramabhad-\nran, \u201cDeep convolutional ne"
+        },
+        {
+            "document": "sample_pdf_3.pdf",
+            "page_number": 1,
+            "section_title": "SpeechMoE: Scaling to Large Acoustic Models with Dynamic Routing",
+            "refined_text": "SpeechMoE: Scaling to Large Acoustic Models with Dynamic Routing\nMixture of Experts\nZhao You\u22171, Shulin Feng\u22171, Dan Su1, Dong Yu2\n1Tencent AI Lab, Shenzhen, China\n2Tencent AI Lab, Bellevue, WA, USA\n{dennisyou, shulinfeng, dansu, dyu}@tencent.com\nAbstract\nRecently, Mixture of Experts (MoE) based Transformer has\nshown promising results in many domains. This is largely due\nto the following advantages of this architecture: \ufb01rstly, MoE\nbased Transformer can increase model capacity without com-\nputatio"
+        },
+        {
+            "document": "sample_pdf_3.pdf",
+            "page_number": 3,
+            "section_title": "4. Experimental Setup",
+            "refined_text": "courage the sparsity of router activation, we propose a sparsity\nL1 loss, de\ufb01ned as follows:\nLs = 1\nm\nm\nX\ni=1\n\u2225\u02c6fi \u22251\n(9)\nwhere \u02c6fi =\nfi\n\u2225fi\u22252 , stands for the unit normalized router proba-\nbility distribution of sample i, and m is the number of samples\nin this mini-batch. Due to the unit normalization, minimizing\nthe L1 norm will force the distribution close to space axes and\nattain sparsity.\n3.2.2. Mean importance loss\nWe have also observed that model isn\u2019t balanced enough when\nincreasing the "
+        },
+        {
+            "document": "sample_pdf_3.pdf",
+            "page_number": 4,
+            "section_title": "5. Experimental Results",
+            "refined_text": "Table 1: Results of adding sparseness L1 loss.\nModel\nParams\nFLOPs\nTest set\nRead\nChat\nSpon\nAISHELL\nB1\n71M\n2.3B\n2.0\n22.92\n24.95\n4.52\nB2\n134M\n2.3B\n1.81\n22.49\n24.90\n4.50\nMoE-L1\n134M\n2.3B\n1.69\n22.47\n24.70\n4.25\nTable 2: Results of augmenting shared embedding network and\nutilizing mean importance loss.\nModel\nParams\nFLOPs\nTest set\nRead\nChat\nSpon\nAISHELL\nMoE-L1\n134M\n2.3B\n1.69\n22.47\n24.70\n4.25\n+emb\n170M\n2.3B\n1.63\n22.15\n24.15\n4.16\n+imp loss\n170M\n2.3B\n1.58\n21.57\n23.31\n4.00\n5. Experimental Results\n5.1. Addin"
+        }
+    ]
+}

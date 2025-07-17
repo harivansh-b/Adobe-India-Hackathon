@@ -1,0 +1,7 @@
+{
+    "persona": "AI Researcher focusing on Deep Learning and Graph Neural Networks",
+    "job_to_be_done": "Extract and summarize key architectures, challenges, and applications of Graph Neural Networks",
+    "documents": [
+        "sample_pdf/sample_pdf_3.pdf"
+    ]
+}
