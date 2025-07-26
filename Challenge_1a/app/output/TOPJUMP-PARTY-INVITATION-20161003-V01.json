@@ -4,10 +4,7 @@
     {
       "level": "H3",
       "text": "RSVP: ----------------",
-      "page": 1,
-      "is_bold": 1,
-      "font_size": 19.533597946166992
+      "page": 1
     }
-  ],
-  "execution_time_seconds": "0.1059"
+  ]
 }

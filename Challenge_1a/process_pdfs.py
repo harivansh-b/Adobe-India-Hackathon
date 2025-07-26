@@ -448,9 +448,8 @@ class PDFOutlineExtractor:
                 outline.append({
                     "level": row.get('level', 'H1'),
                     "text": str(row.get('text', '')).strip(),
-                    "page": int(row.get('page', 1)),
-                    "is_bold": row.get('is_bold', False),
-                    "font_size": float(row.get('size', 0.0))
+                    "page": int(row.get('page', 1))
+                    # Removed "is_bold" and "font_size"
                 })
             
             # Apply domain-specific corrections for ISTQB document
@@ -495,16 +494,13 @@ class PDFOutlineExtractor:
         
         for entry in outline:
             text = entry['text']
-            
             # Check for exact matches
             if text in expected_structure:
                 level, page = expected_structure[text]
                 corrected.append({
                     "level": level,
                     "text": text,
-                    "page": page,
-                    "is_bold": entry.get("is_bold", False),
-                    "font_size": entry.get("font_size", 0.0)
+                    "page": page
                 })
             else:
                 # Check for partial matches
@@ -522,12 +518,15 @@ class PDFOutlineExtractor:
                     corrected.append({
                         "level": level,
                         "text": text,
-                        "page": page,
-                        "is_bold": entry.get("is_bold", False),
-                        "font_size": entry.get("font_size", 0.0)
-                        })
+                        "page": page
+                    })
                 else:
-                    corrected.append(entry)
+                    # Remove is_bold and font_size if present
+                    corrected.append({
+                        "level": entry.get("level", "H1"),
+                        "text": text,
+                        "page": entry.get("page", 1)
+                    })
         
         return corrected
 
@@ -551,15 +550,12 @@ def process_pdfs():
             result = extractor.extract_headings_and_structure(pdf_file)
             end_time = time.time() # End time for this file
             
-            duration = end_time - start_time
-            result['execution_time_seconds'] = f"{duration:.4f}" # Add execution time to JSON
-
             output_file = output_dir / f"{pdf_file.stem}.json"
             with open(output_file, "w", encoding="utf-8") as f:
                 json.dump(result, f, indent=2, ensure_ascii=False)
             
             # Print success message with timing
-            print(f"✅ Saved: {output_file.name} (took {duration:.2f} seconds)")
+            print(f"✅ Saved: {output_file.name} (took {(end_time - start_time):.2f} seconds)")
 
         except Exception as e:
             print(f"❌ Error processing {pdf_file.name}: {e}")
@@ -573,4 +569,3 @@ if __name__ == "__main__":
     print("🚀 Starting advanced PDF outline extraction...")
     process_pdfs()
     print("✅ Done.")
-        

@@ -4,17 +4,12 @@
     {
       "level": "H2",
       "text": "12. Amount of advance required.",
-      "page": 1,
-      "is_bold": 1,
-      "font_size": 9.744400024414062
+      "page": 1
     },
     {
       "level": "H2",
       "text": "6. Home Town as recorded in the Service Book",
-      "page": 1,
-      "is_bold": 1,
-      "font_size": 9.744399999999928
+      "page": 1
     }
-  ],
-  "execution_time_seconds": "1.7825"
+  ]
 }
