@@ -1,7 +1,7 @@
-import pymupdf
+import fitz  # PyMuPDF
 
 def extract_sections_from_pdf(pdf_path):
-    doc = pymupdf.open(pdf_path)
+    doc = fitz.open(pdf_path)
     sections = []
 
     for page_num in range(len(doc)):
